@@ -185,6 +185,7 @@
         display: block; /* Exibe subcategorias quando o item é hover */
     }
 
+<<<<<<< Updated upstream
     .sociais {
         display: flex; /* Mostra o botão na versão desktop */
         align-items: center; /* Centraliza o botão verticalmente */
@@ -203,6 +204,24 @@
         align-items: center;
         justify-content: space-around;
     }
+=======
+  .parceiro-btn {
+    border: 1px solid #58ffc3;
+    background-color: transparent;
+    color: #58ffc3;
+    border-radius: 8px;
+    height: 48px;
+    width: 106%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .parceiro-btn img {
+    width: 15px;
+    height: 20px;
+  }
+>>>>>>> Stashed changes
 
     .parceiro-btn img {
         width: 15px;
@@ -223,10 +242,17 @@
         column-gap: 5%;
     }
 
+<<<<<<< Updated upstream
     .nav-logo {
         width: 110px;
         height: 65px;
     }
+=======
+  .nav-logo {
+    width: 176px;
+    height: 85px;
+  }
+>>>>>>> Stashed changes
 
     .nav-menu-desktop {
         display: flex;

@@ -57,6 +57,7 @@
     width: 155px;
 }
 
+<<<<<<< Updated upstream
 .hero-info h2, .hero-info h3 {
     font-family: 'Sora', sans-serif;
     color: #001B3C;
@@ -89,6 +90,15 @@
     display: flex;
     padding-bottom: 5%;
     cursor: pointer;
+=======
+.arrow {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.4rem;
+  top: 50%;
+>>>>>>> Stashed changes
 }
 
 .info-arrow {
@@ -241,4 +251,36 @@
         width: 2vw; /* Tamanho da seta proporcional */
         cursor: pointer;
     }
+}
+
+@media screen and (min-width: 1024px) {
+  .vector {
+    width: 75%;
+    height: 100%;
+  }
+
+  .hero-text {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .vector {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .vector {
+    width: 54%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .vector {
+    width: 50%;
+    height: 100%;
+  }
 }
