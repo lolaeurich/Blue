@@ -3,38 +3,52 @@
     display: flex;
     flex-direction: column;
     padding-top: 20%;
-    position: relative; /* Define o contêiner como relativo */
+    position: relative;
+    margin-bottom: 5%; /* Adiciona um espaço embaixo do hero */
+    align-items: center; /* Alinha os itens no centro */
+}
+
+.hero-desk {
+    display: none;
 }
 
 .hero img {
-    padding: 5%;
-    width: 90%; /* Faz a imagem ocupar toda a largura do contêiner */
-    display: block; /* Remove espaços indesejados em algumas implementações */
+    width: 90%; /* Mantém a largura da imagem */
+    max-width: 1200px; /* Define uma largura máxima opcional */
+    display: block;
 }
 
 .hero-info {
-    position: absolute; /* Permite que o elemento se sobreponha */
-    top: 90%; /* Ajusta para centralizar verticalmente */
-    left: 50%; /* Ajusta para centralizar horizontalmente */
-    transform: translate(-50%, -50%); /* Move o elemento para cima e para a esquerda, centralizando-o */
-    padding: 0%;
-    height: fit-content;
+    position: absolute; /* Permite que a hero-info seja posicionada em relação ao contêiner hero */
+    bottom: 0; /* Coloca a hero-info na parte inferior da hero */
+    left: 50%;
+    transform: translate(-50%, 0); /* Centraliza horizontalmente */
+    padding: 20px; /* Adiciona um padding para melhorar o layout */
+    min-height: 100px; /* Define uma altura mínima */
     background-color: #0B76BB;
     border-radius: 25px;
-    width: 90%;
+    width: 85%; /* Mantém a mesma largura da imagem */
+    max-width: 1200px; /* Define uma largura máxima opcional */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0; /* Remova a margem para evitar deslocamento */
+    margin: 0; /* Remove a margem */
     z-index: 1; /* Garante que o conteúdo esteja acima da imagem */
+    transition: min-height 0.3s; /* Transição suave para altura */
+}
+
+.hero-text {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .info-logos {
     display: flex;
     align-items: center;
-    justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     margin-top: 5%;
 }
@@ -43,21 +57,20 @@
     width: 155px;
 }
 
-.hero-info h2 {
-    padding-top: 4%;
+.hero-info h2, .hero-info h3 {
     font-family: 'Sora', sans-serif;
-    font-weight: 700;
     color: #001B3C;
-    font-size: 36px;
     margin: 0;
 }
 
-.hero-info h3 {
-    font-family: 'Sora', sans-serif;
-    font-weight: 300;
-    color: #001B3C;
+.hero-info h2 {
+    font-weight: 700;
     font-size: 36px;
-    margin: 0;
+}
+
+.hero-info h3 {
+    font-weight: 300;
+    font-size: 36px;
 }
 
 .hero-info p {
@@ -83,3 +96,149 @@
     cursor: pointer;
 }
 
+/* Media Queries para Responsividade */
+@media (min-width: 370px) and (max-width: 767px) {
+    .hero {
+        margin-bottom: 10%; /* Aumenta o espaço inferior em telas pequenas */
+    }
+
+    .hero-info {
+        min-height: 120px; /* Ajuste de altura mínima */
+    }
+
+    .hero-info h2, .hero-info h3 {
+        font-size: 30px; /* Tamanho da fonte em telas pequenas */
+    }
+
+    .hero-info p {
+        font-size: 16px; /* Tamanho da fonte em telas pequenas */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        margin-bottom: 15%; /* Aumenta o espaço inferior em telas médias */
+    }
+
+    .hero-info {
+        min-height: 320px; /* Ajuste de altura mínima */
+        width: 87%;
+    }
+
+    .hero-info h2, .hero-info h3 {
+        font-size: 32px; /* Ajuste de tamanho da fonte */
+    }
+
+    .hero-info p {
+        font-size: 18px; /* Tamanho da fonte em telas médias */
+    }
+
+    .info-logos img {
+        width: 130px; /* Ajusta o tamanho do logo */
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        display: none; /* Esconde o hero em telas grandes */
+    }
+
+    .hero-desk {
+        display: flex; /* Certifique-se de que a classe .hero-desk existe e está visível */
+        justify-content: center; /* Centraliza o conteúdo na tela */
+        padding: 5vh 5vw; /* Use padding proporcional */
+        flex-direction: column; /* Organiza o conteúdo verticalmente */
+        align-items: center; /* Centraliza o conteúdo */
+        height: 85vh; /* Defina a altura como uma porcentagem da altura da tela */
+        width: 90%; /* Largura de 90% da tela */
+        max-width: 1880px; /* Limita a largura para não exceder a tela */
+    }
+
+    .hero-desk img {
+        width: 100%; /* A imagem ocupa toda a largura do contêiner */
+        height: auto; /* A altura se ajusta proporcionalmente */
+        object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+        max-height: 70vh; /* Limite a altura da imagem para que ela não ultrapasse a tela */
+    }
+
+    .hero-info-desk {
+        position: absolute;
+        bottom: 10%; /* Ajusta a distância do fundo em relação à altura da tela */
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        padding: 2vw 4vw; /* Padding proporcional */
+        min-height: 10vh; /* Tamanho mínimo proporcional */
+        background-color: #0B76BB;
+        border-radius: 25px;
+        width: 40%; /* A largura do bloco será 40% da largura da tela */
+        max-width: 1200px; /* Limita a largura máxima */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        z-index: 1;
+        transition: min-height 0.3s;
+    }
+
+    .hero-text-desk {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-logos-desk {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .info-logos-desk img {
+        width: 15vw; /* Largura proporcional ao tamanho da tela */
+        max-width: 200px; /* Limite de tamanho para imagens */
+    }
+
+    .hero-info-desk h2, .hero-info-desk h3 {
+        font-family: 'Sora', sans-serif;
+        color: #001B3C;
+        margin: 0;
+    }
+
+    .hero-info-desk h2 {
+        font-weight: 700;
+        font-size: 4vw; /* Tamanho de fonte proporcional ao tamanho da tela */
+    }
+
+    .hero-info-desk h3 {
+        font-weight: 300;
+        font-size: 3vw; /* Tamanho de fonte proporcional */
+    }
+
+    .hero-info-desk p {
+        font-family: 'Sora', sans-serif;
+        font-weight: 300;
+        color: #001B3C;
+        font-size: 2vw; /* Tamanho de fonte proporcional */
+        margin: 0;
+        margin-top: 5%;
+    }
+
+    .info-logos-desk p {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.5vw; /* Tamanho de fonte proporcional */
+        display: flex;
+        padding-bottom: 5%;
+        cursor: pointer;
+        align-items: baseline;
+        column-gap: 5px;
+    }
+
+    .info-arrow-desk {
+        width: 2vw; /* Tamanho da seta proporcional */
+        cursor: pointer;
+    }
+}

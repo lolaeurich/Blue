@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import logo from "../../assets/logo.png";
+import nav from "../../assets/NavBar/navbar.png"
 import { useNavigate } from "react-router-dom";
 
 function Nav() {
@@ -39,6 +40,10 @@ function Nav() {
                         <li>Empreendimentos</li>
                         <li>Quero ser um parceiro</li>
                     </ul>
+
+                    <div className="sociais">
+                        <button className="parceiro-btn"><img alt="" src={nav}/>Área restrita</button>
+                    </div>
                 </div>
 
               
